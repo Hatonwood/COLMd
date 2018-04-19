@@ -116,10 +116,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="colmed.h" />
+    <ClInclude Include="movie.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="colmed.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="movie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

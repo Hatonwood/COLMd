@@ -18,12 +18,18 @@
     <ClInclude Include="colmed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="movie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="colmed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="movie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
