@@ -5,6 +5,8 @@
 #include <list>
 #include <sstream>
 
+#include "colmed.h"
+
 using namespace std;
 using namespace std::experimental::filesystem;
 
@@ -29,13 +31,15 @@ void menu()
 }
 
 /**
-* Lê os ficheiros na directoria atual
+* Main Function
 */
 int main(int argc, char* argv[])
 {
-	printf("COLMd \n\n");
-	printf("Folder: [%s]\n", argv[1]);
+	cout << "COLMd" << endl << endl;
+	std::string asd = argv[0];
+	std::string treatedFolder = asd.erase(asd.rfind('\\'));
+	cout << "Folder: [" << treatedFolder << "]" << endl;
+	colmed mColmed(argv[0]);
 	system("pause");
-	//menu();
 	//Load_aux(path_Recebido, LDados);
 }
