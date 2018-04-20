@@ -7,12 +7,20 @@
 #include <fstream>
 #include <list>
 #include <sstream>
+
 using namespace std;
+using namespace std::experimental::filesystem;
+
+#include "movie.h"
 
 class colmed
 {
+
 private:
-	string m_path;
+	list<movie *> mMovieList;
+	list<string> mUnknowFiles;
+	string mpath;
+
 public:
 	colmed(string path);
 	~colmed();

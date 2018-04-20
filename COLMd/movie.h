@@ -12,19 +12,20 @@ using namespace std;
 class movie
 {
 private:
-	string mNome;
-	int estado;
+	string mName;
+	int mviewed;
 
 public:
 	movie();
+	movie(string name);
 
 	~movie();
 	
 	/* Getter's and Setter's */
-	bool setNome();
-	bool setEstado();
-	int getNome();
-	string getEstado()
+	void setName(string name);
+	void setViewed();
+	string getName();
+	int getViewed();
 
 };
 
