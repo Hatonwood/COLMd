@@ -39,10 +39,8 @@ int main(int argc, char* argv[])
 	std::string temp = argv[0];
 	std::string treatedFolder = temp.erase(temp.rfind('\\'));
 	std::cout << "Folder: [" << treatedFolder << "]" << std::endl;
-	colmed mColmed(argv[0]);
+	colmed mColmed(treatedFolder);
 	mColmed.Scan();
-
-
 
 	system("pause");
 	//Load_aux(path_Recebido, LDados);

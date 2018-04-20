@@ -31,6 +31,7 @@ bool colmed::Scan()
 			mUnknowFiles.push_back(name);
 			numberOffFiles++;
 		}
+		cout << "Name: [" << name << "]" << endl;
 	}
 	if(numberOffFiles != 0)	return true;
 	return false;
