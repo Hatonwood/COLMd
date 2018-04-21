@@ -44,5 +44,9 @@ bool colmed::Scan()
 	return false;
 }
 
+bool colmed::DataScan() 
+{
+
+}
 
 

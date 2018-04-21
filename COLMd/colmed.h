@@ -24,7 +24,16 @@ private:
 public:
 	colmed(string path);
 	~colmed();
+	
+	/*
+	* Scan's the current Directory for movie files
+	*/
 	bool Scan();
+
+	/*
+	* Scan's the current Directory to check for previous Scan's
+	*/
+	bool DataScan();
 };
 
 #endif // !__colmed
