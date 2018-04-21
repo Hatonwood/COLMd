@@ -12,10 +12,10 @@ using namespace std;
 using namespace std::experimental::filesystem;
 
 #include "movie.h"
+#include "MyOwnUtility.h"
 
 class colmed
 {
-
 private:
 	list<movie *> mMovieList;
 	list<string> mUnknowFiles;

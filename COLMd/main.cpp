@@ -35,13 +35,11 @@ void menu()
 */
 int main(int argc, char* argv[])
 {
-	std::cout << "\t*" <<"COLMd" << "*" <<std::endl << std::endl;
+	std::cout << std::endl << "\t*" <<"COLMd" << "*" <<std::endl << std::endl;
 	std::string temp = argv[0];
 	std::string treatedFolder = temp.erase(temp.rfind('\\'));
 	std::cout << "Folder: [" << treatedFolder << "]" << std::endl;
 	colmed mColmed(treatedFolder);
 	mColmed.Scan();
-
 	system("pause");
-	//Load_aux(path_Recebido, LDados);
 }
