@@ -40,6 +40,7 @@ int main(int argc, char* argv[])
 	std::string treatedFolder = temp.erase(temp.rfind('\\'));
 	std::cout << "Folder: [" << treatedFolder << "]" << std::endl;
 	colmed mColmed(treatedFolder);
-	mColmed.Scan();
+	mColmed.DataScan();
+	//mColmed.Scan();
 	system("pause");
 }

@@ -2,6 +2,7 @@
 
 colmed::colmed(string path)
 {
+	if (path.empty()) return;
 	this->mpath = path;
 }
 
@@ -15,7 +16,6 @@ colmed::~colmed()
 
 bool colmed::Scan()
 {
-	if (mpath.empty()) return false;
 	movie *smovie = nullptr;
 	int numberOffFiles = 0;
 	for (auto & p : directory_iterator(mpath))
@@ -26,12 +26,11 @@ bool colmed::Scan()
 		file_type CHECK = p.status().type();
 		if (CHECK == file_type::regular)
 		{
-			/* verificar se é ficheiro video */
 			if(MyOwnUtility::video_check(extension))
 			{
-			smovie = new movie(name);
-			mMovieList.push_back(smovie);
-			cout << "Name: [" << name << "]" << endl;
+				smovie = new movie(name);
+				mMovieList.push_back(smovie);
+				std::cout << "Name: [" << name << "]" << std::endl;
 			}
 		}
 		else 
@@ -46,7 +45,21 @@ bool colmed::Scan()
 
 bool colmed::DataScan() 
 {
-
+	path colm_data = mpath;
+	colm_data.concat("\\.colmed");
+	cout << "COLM_DATA_HIDDEN_DIRECTORY: [" << colm_data << "]" << endl;
+	if (exists(colm_data))
+	{
+		std::cout << "Found data for this directory! Loading it as fast as Usain Bolt" << std::endl;
+		//Loads Data from a XML, txt or something else yet to see
+		//Load_Data_XML();
+		return true;
+	}
+	else
+	{
+		this->Scan();
+		return false;
+	}
 }
 
 
