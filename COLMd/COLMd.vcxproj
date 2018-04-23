@@ -115,11 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\OneDrive\Documentos\Visual Studio 2017\Projects\Projecto_POO\Projecto_POO\XMLWriter.h" />
     <ClInclude Include="colmed.h" />
     <ClInclude Include="movie.h" />
     <ClInclude Include="MyOwnUtility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\OneDrive\Documentos\Visual Studio 2017\Projects\Projecto_POO\Projecto_POO\XMLWriter.cpp" />
     <ClCompile Include="colmed.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="movie.cpp" />

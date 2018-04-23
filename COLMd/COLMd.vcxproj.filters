@@ -24,6 +24,9 @@
     <ClInclude Include="MyOwnUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\OneDrive\Documentos\Visual Studio 2017\Projects\Projecto_POO\Projecto_POO\XMLWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="colmed.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyOwnUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Documentos\Visual Studio 2017\Projects\Projecto_POO\Projecto_POO\XMLWriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

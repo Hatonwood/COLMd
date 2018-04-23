@@ -9,6 +9,7 @@ movie::movie()
 movie::movie(string name)
 {
 	this->mName = name;
+	this->mviewed = 0;
 }
 
 

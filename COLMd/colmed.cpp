@@ -4,6 +4,8 @@ colmed::colmed(string path)
 {
 	if (path.empty()) return;
 	this->mpath = path;
+	numberOfReadableFiles = 0;
+	numberOfNonReadableFiles = 0;
 }
 
 
@@ -17,7 +19,6 @@ colmed::~colmed()
 bool colmed::Scan()
 {
 	movie *smovie = nullptr;
-	int numberOffFiles = 0;
 	for (auto & p : directory_iterator(mpath))
 	{
 		path common = p.path();
@@ -30,16 +31,17 @@ bool colmed::Scan()
 			{
 				smovie = new movie(name);
 				mMovieList.push_back(smovie);
-				std::cout << "Name: [" << name << "]" << std::endl;
+				numberOfReadableFiles++;
+				cout << "hey";
 			}
 		}
 		else 
 		{
 			mUnknowFiles.push_back(name);
-			numberOffFiles++;
+			numberOfNonReadableFiles++;
 		}
 	}
-	if(numberOffFiles != 0)	return true;
+	if(numberOfReadableFiles != 0)	return true;
 	return false;
 }
 
@@ -62,4 +64,22 @@ bool colmed::DataScan()
 	}
 }
 
+void colmed::MovieListShow()
+{
+	if (this->numberOfReadableFiles == 0) return;
+	std::cout << std::endl;
+	std::cout << "|------------------------------" << std::endl;
+	std::cout << "| Movie List" << std::endl;
+	std::cout << "|------------------------------" << std::endl;
+	for (list<movie *>::iterator it = mMovieList.begin(); it != mMovieList.end(); ++it)
+	{
+		std::cout << "|->" << (*it)->getName() << "] Viewed: [";
+		if ((*it)->getViewed()) std::cout << "YES";
+		else std::cout << "NO";
+		std::cout << "]" << std::endl;
+	}
+	std::cout << "|------------------------------" << std::endl;
+	std::cout << "| End of Movie List" << std::endl;
+	std::cout << "|------------------------------" << std::endl;
+}
 

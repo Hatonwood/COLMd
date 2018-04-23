@@ -20,6 +20,8 @@ private:
 	list<movie *> mMovieList;
 	list<string> mUnknowFiles;
 	string mpath;
+	int numberOfReadableFiles;
+	int numberOfNonReadableFiles;
 
 public:
 	colmed(string path);
@@ -34,6 +36,11 @@ public:
 	* Scan's the current Directory to check for previous Scan's
 	*/
 	bool DataScan();
+
+	/*
+	*List's the movie list
+	*/
+	void MovieListShow();
 };
 
 #endif // !__colmed

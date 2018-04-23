@@ -40,7 +40,8 @@ int main(int argc, char* argv[])
 	std::string treatedFolder = temp.erase(temp.rfind('\\'));
 	std::cout << "Folder: [" << treatedFolder << "]" << std::endl;
 	colmed mColmed(treatedFolder);
-	mColmed.DataScan();
-	//mColmed.Scan();
+	//mColmed.DataScan();
+	if (mColmed.Scan()) std::cout << "Load Sucessfull" << std::endl;
+	mColmed.MovieListShow();
 	system("pause");
 }
