@@ -49,6 +49,7 @@ int main(int argc, char* argv[])
 
 		case 0: 
 			mColmed.SaveData();
+			system("pause");
 			exit(1);
 			break;
 
@@ -57,6 +58,5 @@ int main(int argc, char* argv[])
 			break;
 		}
 	} while (opcao != 0);
-	system("pause");
 }
 

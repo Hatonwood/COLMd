@@ -32,7 +32,6 @@ bool colmed::Scan()
 				smovie = new movie(name);
 				mMovieList.push_back(smovie);
 				numberOfReadableFiles++;
-				cout << "hey";
 			}
 		}
 		else 
@@ -115,7 +114,38 @@ void colmed::PlaynextMovie()
 	nmovie->setViewed();
 }
 
+bool colmed::SaveDataToFile(const char * file)
+{
+	int datasaved = 0;
+	cout << file;
+	std::ofstream datafile;
+	datafile.open(file, std::ofstream::out);
+	cout << "hey";
+		for (list<movie *>::iterator it = mMovieList.begin(); it != mMovieList.end(); ++it)
+		{
+			cout << "hey3";
+			datafile << (*it)->getName();
+			datafile << (*it)->getViewed();
+			if(it != mMovieList.end()) datafile << endl;
+			datasaved++;
+		}
+
+	datafile.close();
+	if (datasaved == numberOfReadableFiles) return true;
+	return false;
+}
+
 bool colmed::SaveData()
 {
-
+	cout << "Inicio";
+	string direc = mpath.append("\\.colmed");
+	const char * directory = direc.c_str();
+	CreateDirectory(directory,NULL);
+	SetFileAttributes(directory,FILE_ATTRIBUTE_HIDDEN);
+	string fil = directory;
+	fil.append("\\.colmed.txt"); // txt for now
+	const char * file = fil.c_str();
+	CreateFile(file, GENERIC_WRITE, FILE_SHARE_WRITE | FILE_SHARE_READ, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_HIDDEN,NULL);
+	if(SaveDataToFile(file)) return true;
+	return false;
 }

@@ -7,6 +7,7 @@
 #include <fstream>
 #include <list>
 #include <sstream>
+#include <Windows.h>
 
 using namespace std;
 using namespace std::experimental::filesystem;
@@ -56,6 +57,11 @@ public:
 	* Saves the current COLMd data
 	*/
 	bool SaveData();
+
+	/*
+	* Saves Data to a File (MUST: SAVEDATA ALWAYS EXECUTES FIRST)
+	*/
+	bool SaveDataToFile(const char * file);
 };
 
 #endif // !__colmed
