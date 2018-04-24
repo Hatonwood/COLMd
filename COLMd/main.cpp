@@ -10,24 +10,14 @@
 using namespace std;
 using namespace std::experimental::filesystem;
 
-
 void menu()
 {
-	char opcao;
-	printf("\n");
-	printf("**********************");
-	printf("* 1. Scan Folder *");
-	printf("* 2. *");
-	printf("**********************");
-	gets_s(&opcao, 1);
-	switch (opcao)
-	{
-	case '1':
-		//Load();
-	default: 
-		printf("The chosen option is not valid!");
-		break;
-	}
+	std::cout << "\n" << std::endl;
+	std::cout << "**********************" << std::endl;
+	std::cout << "* 1. Play first *" << std::endl;
+	std::cout << "* 2. Play next *" << std::endl;
+	std::cout << "* 0. Exit *" << std::endl;
+	std::cout << "**********************" << std::endl;
 }
 
 /**
@@ -43,5 +33,30 @@ int main(int argc, char* argv[])
 	//mColmed.DataScan();
 	if (mColmed.Scan()) std::cout << "Load Sucessfull" << std::endl;
 	mColmed.MovieListShow();
+	int opcao;
+	do { 
+		menu(); 
+		cin >> opcao; 
+		switch (opcao)
+		{
+		case 1:
+			std::cout << mColmed.NextMovie();
+			break;
+
+		case 2:
+			mColmed.PlaynextMovie();
+			break;
+
+		case 0: 
+			mColmed.SaveData();
+			exit(1);
+			break;
+
+		default:
+			std::cout << "The chosen option is not valid!" << std::endl;
+			break;
+		}
+	} while (opcao != 0);
 	system("pause");
 }
+

@@ -38,9 +38,24 @@ public:
 	bool DataScan();
 
 	/*
-	*List's the movie list
+	* List's the movie list
 	*/
 	void MovieListShow();
+
+	/*
+	* Returns a string with the next movie
+	*/
+	movie * NextMovie();
+
+	/*
+	* Plays the next movie that has not been played yet
+	*/
+	void PlaynextMovie();
+
+	/*
+	* Saves the current COLMd data
+	*/
+	bool SaveData();
 };
 
 #endif // !__colmed

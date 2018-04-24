@@ -83,3 +83,39 @@ void colmed::MovieListShow()
 	std::cout << "|------------------------------" << std::endl;
 }
 
+movie * colmed::NextMovie()
+{
+	for (list<movie *>::iterator it = mMovieList.begin(); it != mMovieList.end(); ++it)
+	{
+		if (!((*it)->getViewed()))
+		{
+			return (*it);
+		}
+	}
+	return nullptr;
+}
+
+void colmed::PlaynextMovie()
+{
+	//Default Installation of VLC maybe it can be asked or detected somehow later for versatility
+	std::string execute = "\"\"C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe\" \"";
+	movie * nmovie = NextMovie();
+	std::string nmoviename = (nmovie->getName());
+	if (nmoviename.compare("0")==0)
+	{
+		std::cout << "There are no movies available to see" << std::endl;
+		return;
+	}
+	execute.append(mpath);
+	execute.append("\\");
+	execute.append(nmoviename);
+	execute.append("\"\"");
+	cout << "[" << execute << "]" << endl;
+	system(execute.c_str());
+	nmovie->setViewed();
+}
+
+bool colmed::SaveData()
+{
+
+}
