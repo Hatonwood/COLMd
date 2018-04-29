@@ -10,4 +10,6 @@ Have you ever been on edge knowing what your next episode was were tired of open
 
 # Mann
 
-Hell yeah man, COLM'd is so light even it doesn't feel itself.
+Hell yeah man, COLM'd is so light even it doesn't feel itself. Seriously it IS Light and Fast *blink*
+
+#The project is going back and forth even though I get more interest in it every single time
