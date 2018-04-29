@@ -117,27 +117,22 @@ void colmed::PlaynextMovie()
 bool colmed::SaveDataToFile(const char * file)
 {
 	int datasaved = 0;
-	cout << file;
 	std::ofstream datafile;
 	datafile.open(file, std::ofstream::out);
-	cout << "hey";
-		for (list<movie *>::iterator it = mMovieList.begin(); it != mMovieList.end(); ++it)
-		{
-			cout << "hey3";
-			datafile << (*it)->getName();
-			datafile << (*it)->getViewed();
-			if(it != mMovieList.end()) datafile << endl;
-			datasaved++;
-		}
-
+	for (list<movie *>::iterator it = mMovieList.begin(); it != mMovieList.end(); ++it)
+	{
+		datafile << (*it)->getName() << "\t";
+		datafile << (*it)->getViewed();
+		if(it != mMovieList.end()) datafile << endl;
+		datasaved++;
+	}
 	datafile.close();
 	if (datasaved == numberOfReadableFiles) return true;
 	return false;
 }
 
 bool colmed::SaveData()
-{
-	cout << "Inicio";
+{	//NEEDS REWORK
 	string direc = mpath.append("\\.colmed");
 	const char * directory = direc.c_str();
 	CreateDirectory(directory,NULL);
@@ -145,7 +140,11 @@ bool colmed::SaveData()
 	string fil = directory;
 	fil.append("\\.colmed.txt"); // txt for now
 	const char * file = fil.c_str();
-	CreateFile(file, GENERIC_WRITE, FILE_SHARE_WRITE | FILE_SHARE_READ, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_HIDDEN,NULL);
-	if(SaveDataToFile(file)) return true;
+	//Could not writte to file creating the file this way
+	//CreateFile(file, GENERIC_WRITE, FILE_SHARE_WRITE | FILE_SHARE_READ, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_HIDDEN,NULL);
+	if (SaveDataToFile(file)) {
+		SetFileAttributes(file, FILE_ATTRIBUTE_HIDDEN);
+		return true;
+	}
 	return false;
 }
