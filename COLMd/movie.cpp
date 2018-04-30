@@ -12,6 +12,12 @@ movie::movie(string name)
 	this->mviewed = 0;
 }
 
+movie::movie(string name, int status)
+{
+	this->mName = name;
+	this->mviewed = status;
+}
+
 
 movie::~movie()
 {

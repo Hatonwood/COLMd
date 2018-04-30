@@ -25,13 +25,12 @@ void menu()
 */
 int main(int argc, char* argv[])
 {
-	std::cout << std::endl << "\t*" <<"COLMd" << "*" <<std::endl << std::endl;
+	std::cout << std::endl << "\t*" <<"COLMd" << "*" << std::endl << std::endl;
 	std::string temp = argv[0];
 	std::string treatedFolder = temp.erase(temp.rfind('\\'));
 	std::cout << "Folder: [" << treatedFolder << "]" << std::endl;
 	colmed mColmed(treatedFolder);
-	//mColmed.DataScan();
-	if (mColmed.Scan()) std::cout << "Load Sucessfull" << std::endl;
+	if (mColmed.DataScan()) std::cout << "Load Sucessfull" << std::endl;
 	mColmed.MovieListShow();
 	int opcao;
 	do { 

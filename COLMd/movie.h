@@ -18,7 +18,7 @@ private:
 public:
 	movie();
 	movie(string name);
-
+	movie(string name, int status);
 	~movie();
 	
 	/* Getter's and Setter's */

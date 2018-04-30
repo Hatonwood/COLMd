@@ -48,12 +48,10 @@ bool colmed::DataScan()
 {
 	path colm_data = mpath;
 	colm_data.concat("\\.colmed");
-	cout << "COLM_DATA_HIDDEN_DIRECTORY: [" << colm_data << "]" << endl;
 	if (exists(colm_data))
 	{
 		std::cout << "Found data for this directory! Loading it as fast as Usain Bolt" << std::endl;
-		//Loads Data from a XML, txt or something else yet to see
-		//Load_Data_XML();
+		MyOwnUtility();
 		return true;
 	}
 	else

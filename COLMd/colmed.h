@@ -39,7 +39,7 @@ public:
 	bool DataScan();
 
 	/*
-	* List's the movie list
+	* Lists the movie list
 	*/
 	void MovieListShow();
 
