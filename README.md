@@ -10,6 +10,10 @@ Have you ever been on edge knowing what your next episode was were tired of open
 
 # Mann
 
-Hell yeah man, COLM'd is so light even it doesn't feel itself. Seriously it IS Light and Fast *blink*
+Hell yeah man, COLM'd is so light even it doesn't feel itself. Seriously it IS Light and Fast *blink* Maybe it turns out to be even faster in the future.
 
 #The project is going back and forth even though I get more interest in it every single time
+
+The current status is:
+
+Reading data from file and store it in the COLMed Class so the application takes the status from where it was last executed
