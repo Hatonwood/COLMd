@@ -12,7 +12,7 @@ Have you ever been on edge knowing what your next episode was were tired of open
 
 Hell yeah man, COLM'd is so light even it doesn't feel itself. Seriously it IS Light and Fast *blink* Maybe it turns out to be even faster in the future.
 
-#The project is going back and forth even though I get more interest in it every single time
+#The project is going back and forth even though I get more interest in it every single day to week * to 2 weeks now
 
 The current status is:
 
